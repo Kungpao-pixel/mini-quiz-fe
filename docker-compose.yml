@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - BACKEND_URL=http://backend:3000
+    volumes:
+      - .:/app
+    networks:
+      - miniquiz-net
+
+networks:
+  miniquiz-net:
